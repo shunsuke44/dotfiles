@@ -142,12 +142,14 @@ fi
 
 export PATH="$PATH:$GOPATH/bin"
 
-[ -f ~/.rbenv/bin/rbenv ] && eval "$(~/.rbenv/bin/rbenv init - bash)"
-[ -f ~/.cargo/env ] && source "$HOME/.cargo/env"
+command -v rbenv >/dev/null && eval "$(rbenv init - bash)"
+[[ -f ~/.rbenv/bin/rbenv ]] && eval "$(~/.rbenv/bin/rbenv init - bash)"
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[[ -f ~/.cargo/env ]] && source "$HOME/.cargo/env"
+
+[[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
-[ $(command -v direnv) ] && eval "$(direnv hook bash)"
+command -v direnv >/dev/null && eval "$(direnv hook bash)"
