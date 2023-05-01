@@ -153,5 +153,3 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
 command -v direnv >/dev/null && eval "$(direnv hook bash)"
-
-[[ -d /Applications/UTM.app/Contents/MacOS ]] && export PATH="$PATH:/Applications/UTM.app/Contents/MacOS"
