@@ -21,7 +21,7 @@ for fname in ${files[@]}; do
     if [[ -f "$HOME/$fname" ]]; then
         mv "$HOME/$fname" "$HOME/${fname}${origext}"
     fi
-    ln "$absname" "$HOME/$fname"
+    ln -s "$absname" "$HOME/$fname"
     echo "installed $fname"
 done
 
