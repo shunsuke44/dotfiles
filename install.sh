@@ -12,7 +12,7 @@ case "$(uname -s)" in
        exit 1
 esac
 
-files=('.bash_profile' '.bashrc' '.git-prompt.sh' '.tmux.conf')
+files=('.bash_profile' '.bashrc' '.git-prompt.sh' '.tmux.conf' '.vimrc')
 
 # install global dotfiles
 echo 'installing global dotfiles...'
