@@ -17,7 +17,7 @@ set virtualedit=block
 set showmatch
 set matchtime=1
 set updatetime=1000
-set signcolumn="yes"
+set signcolumn=yes
 set list
 set listchars=eol:↵,trail:•,tab:>-
 set expandtab
@@ -32,6 +32,7 @@ set smartcase
 set splitbelow
 set splitright
 set nobackup
+set noswapfile
 set encoding=utf-8
 let g:mapleader=" "
 
