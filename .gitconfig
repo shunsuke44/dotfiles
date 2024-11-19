@@ -1,0 +1,9 @@
+[user]
+	name = Shunsuke Shimura
+	email = shunsuke.shimura@satori.team
+[alias]
+	st = status
+	co = checkout
+	ci = commit
+	br = branch
+	cm = commit -m
