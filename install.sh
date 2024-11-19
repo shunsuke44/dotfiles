@@ -18,8 +18,10 @@ files=('.bash_profile' '.bashrc' '.git-prompt.sh' '.tmux.conf' '.vimrc')
 echo 'installing global dotfiles...'
 for fname in ${files[@]}; do
     absname="$(readlink -f $fname)"
-    if [[ -f "$HOME/$fname" ]]; then
-        mv "$HOME/$fname" "$HOME/${fname}${origext}"
+    if [[ -f "$HOME/$fname" && ! -h "$HOME/$fname" ]]; then
+        mv "$HOME/$fname" "$HOME/${fname}-$(date '%Y%m%d%H%M%S')-backup"
+    else
+        rm "$HOME/$fname"
     fi
     ln -s "$absname" "$HOME/$fname"
     echo "installed $fname"
