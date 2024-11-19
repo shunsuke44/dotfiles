@@ -32,7 +32,6 @@ set smartcase
 set splitbelow
 set splitright
 set nobackup
-set noswapfile
 set encoding=utf-8
 let g:mapleader=" "
 
