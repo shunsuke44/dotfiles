@@ -75,6 +75,12 @@ augroup GoTabConfig
   au FileType go setlocal noet
 augroup END
 
+" set terminal window options
+augroup TermOptions
+  au!
+  au TerminalWinOpen * :setlocal nonumber signcolumn=no
+augroup END
+
 " =====================
 "     vim-plug
 " =====================
