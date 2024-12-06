@@ -81,6 +81,11 @@ augroup TermOptions
   au TerminalWinOpen * :setlocal nonumber signcolumn=no
 augroup END
 
+augroup ActivateEmmet
+  au!
+  au FileType html,htmldjango,css,typescript,typescriptreact,eruby,gohtmltmpl :EmmetInstall
+augroup END
+
 " =====================
 "     vim-plug
 " =====================
