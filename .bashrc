@@ -121,6 +121,9 @@ fi
 
 export EDITOR=vim
 
+# bash completion
+source ~/.git-completion.bash
+
 if [[ -d "$HOME/.nvm" ]]; then
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -134,6 +137,8 @@ fi
 
 if [[ -d ~/.goenv ]]; then
     export GOENV_ROOT="$HOME/.goenv"
+    # Not to manage GOPATH WITH goenv
+    export GOENV_DISABLE_GOPATH=1
     export PATH="$GOENV_ROOT/bin:$PATH"
     eval "$(goenv init -)"
     export PATH="$GOROOT/bin:$PATH"

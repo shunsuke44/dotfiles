@@ -12,16 +12,18 @@ case "$(uname -s)" in
        exit 1
 esac
 
-files=('.bash_profile' '.bashrc' '.git-prompt.sh' '.tmux.conf' '.vimrc')
+files=('.bash_profile' '.bashrc' '.git-prompt.sh' '.git-completion.bash' '.tmux.conf' '.vimrc')
 
 # install global dotfiles
 echo 'installing global dotfiles...'
 for fname in ${files[@]}; do
     absname="$(readlink -f $fname)"
-    if [[ -f "$HOME/$fname" && ! -h "$HOME/$fname" ]]; then
-        mv "$HOME/$fname" "$HOME/${fname}-$(date '%Y%m%d%H%M%S')-backup"
-    else
-        rm "$HOME/$fname"
+    if [[ -f "$HOME/$fname" ]]; then
+        if [[ ! -h "$HOME/$fname" ]]; then
+            mv "$HOME/$fname" "$HOME/${fname}-$(date '%Y%m%d%H%M%S')-backup"
+        else
+            rm "$HOME/$fname"
+        fi
     fi
     ln -s "$absname" "$HOME/$fname"
     echo "installed $fname"
