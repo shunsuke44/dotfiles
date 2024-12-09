@@ -142,10 +142,9 @@ if [[ -d ~/.goenv ]]; then
     export PATH="$GOENV_ROOT/bin:$PATH"
     eval "$(goenv init -)"
     export PATH="$GOROOT/bin:$PATH"
-else
-    export GOPATH="$HOME/go"
 fi
 
+export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 
 command -v rbenv >/dev/null && eval "$(rbenv init - bash)"
